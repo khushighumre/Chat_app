@@ -1,3 +1,6 @@
 
 using socket io
 enables bidirectional , real-time communication between the client and server. It is a popular choice for web development, especially
+bcryptjs : to encrypt the password then will store in database
+clodinary to upload the img in cloud storage
+cors to connect backend to frontend
