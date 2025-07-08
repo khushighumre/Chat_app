@@ -60,13 +60,13 @@ npm run dev
 
 Below are snapshots of the QuickChat application's interface to give you a glimpse of its clean and responsive UI:
 
-### 🔐 Login Page
-![Login Page](./screenshots/login.png)
+### 📝 Signup Page
+![Signup Page](./screenshots/signup.png)
 
 ---
 
-### 📝 Signup Page
-![Signup Page](./screenshots/signup.png)
+### 🔐 Login Page
+![Login Page](./screenshots/login.png)
 
 ---
 
