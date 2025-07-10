@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import assets, { userDummyData } from '../assets/assets';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 
 
 
 
 const Sidebar = ({selectedUser, setSelectedUser}) => {
+
+  const {logout} = useContext(AuthContext)
+
     const navigate = useNavigate();
   return (
     <div className={`bg-[#818582]/10 h-full p-5 rounded-r-xl overflow-y-scroll text-white ${selectedUser ? 'max-md:hidden' : ''}`}>
