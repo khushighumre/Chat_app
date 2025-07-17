@@ -1,7 +1,7 @@
 import React from 'react';
 import { imagesDummyData } from '../assets/assets';
 import  { useEffect, useState, useContext } from 'react';
-import assets from '../assets/assets';  // ✅ Correct path based on your folder structure
+import assets from '../assets/assets';  
 
 import { ChatContext } from '../../context/ChatContext';
 import { AuthContext } from '../../context/AuthContext';

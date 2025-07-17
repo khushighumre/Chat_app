@@ -7,10 +7,10 @@ export const getUsersForSidebar = async (req, res) => {
   try {
     const userId = req.user._id;
 
-    // ✅ Fetch all users except logged-in one and EXCLUDE password
+    //  Fetch all users except logged-in one and EXCLUDE password
     const filteredUsers = await User.find({ _id: { $ne: userId } }).select("-password");
 
-    // ✅ Build unseen messages map
+    // Build unseen messages map
     const unseenMessages = {};
     const promises = filteredUsers.map(async (user) => {
       const messages = await Message.find({
