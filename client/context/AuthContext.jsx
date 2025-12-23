@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
   //  Check auth
   const checkAuth = async () => {
     try {
-      const { data } = await axios.get("/api/check");
+      const { data } = await axios.get("/api/auth/check");
       if (data.success) {
         setAuthUser(data.user);
         connectSocket(data.user);
@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
   //  Login
   const login = async (state, credentials) => {
     try {
-      const { data } = await axios.post(`/api/${state}`, credentials);
+      const { data } = await axios.post(`/api/auth/${state}`, credentials);
       if (data.success) {
         setAuthUser(data.userData);
         connectSocket(data.userData);
@@ -75,7 +75,7 @@ export const AuthProvider = ({ children }) => {
 
     const token = localStorage.getItem("token");
 
-    const { data } = await axios.put("/api/update-profile", body, {
+    const { data } = await axios.put("/api/auth/update-profile", body, {
       headers: {
         Authorization: `Bearer ${token}`, //  required
       },
