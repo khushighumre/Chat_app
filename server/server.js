@@ -126,6 +126,7 @@ app.use(express.json({ limit: "4mb" }));
 app.use(cors());
 
 // ✅ Routes setup
+app.get("/", (req, res) => res.send("Chat Backend API ✅"));
 app.use("/api/status", (req, res) => res.send("Server is live ✅"));
 app.use("/api/auth", userRouter);
 app.use("/api/messages", messageRouter);
