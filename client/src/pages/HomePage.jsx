@@ -4,7 +4,7 @@ import ChatContainer from '../components/ChatContainer';
 import RightSidebar from '../components/RightSidebar';
 import Sidebar from '../components/Sidebar';
 import { useContext } from 'react';
-import { ChatContext } from '../../context/ChatContext';
+import { ChatContext } from '../../context/ChatContext.jsx';
 
 const HomePage = () => {
   const {selectedUser} = useContext(ChatContext)
