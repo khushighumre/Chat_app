@@ -123,7 +123,16 @@ io.on("connection", (socket) => {
 
 // ✅ Middleware setup
 app.use(express.json({ limit: "4mb" }));
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://chat-app-woad-nu.vercel.app"
+    ],
+    credentials: true,
+  })
+);
+
 
 // ✅ Routes setup
 app.get("/", (req, res) => res.send("Chat Backend API ✅"));

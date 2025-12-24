@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
         connectSocket(data.user);
       }
     } catch (error) {
-      toast.error(error.message);
+      toast.error(error.response?.data?.message || "Auth failed");
     }
   };
 
@@ -56,7 +56,7 @@ export const AuthProvider = ({ children }) => {
     setToken(null);
     setAuthUser(null);
     setonlineUsers([]);
-    delete axios.defaults.headers.common["token"];
+    delete axios.defaults.headers.common["Authorization "];
     toast.success("Logged out successfully");
 
     if (socket) {
@@ -115,10 +115,10 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     if (token) {
       axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-
+      checkAuth();
     }
-    checkAuth();
-  }, []);
+    
+  }, [token]);
 
   //  Provide all
   const value = {
